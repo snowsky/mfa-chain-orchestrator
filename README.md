@@ -2,6 +2,8 @@
 
 Policy-driven MFA chain orchestration with strict step order, TOTP verification, and reset-on-failure behavior.
 
+[PyPI project page](https://pypi.org/project/mfa-chain-orchestrator/)
+
 ## Features
 
 - `fixed` or `random` MFA factor sequencing per attempt.
@@ -13,12 +15,16 @@ Policy-driven MFA chain orchestration with strict step order, TOTP verification,
 ## Installation
 
 ```bash
-pip install -r requirements.txt
+pip install mfa-chain-orchestrator
 ```
 
-or
+Python `3.10+` is required.
+
+To install from source instead:
 
 ```bash
+git clone https://github.com/snowsky/mfa-chain-orchestrator.git
+cd mfa-chain-orchestrator
 pip install .
 ```
 
@@ -208,7 +214,7 @@ curl -s -X POST http://127.0.0.1:8000/attempt/verify \
 ```
 
 If verification fails, the orchestrator returns reset behavior and the chain restarts from step 1.
-For the full scriptable process, see `TEST_PROCESS.md`.
+For the full scriptable process, see `docs/TEST_PROCESS.md`.
 
 ## License
 
